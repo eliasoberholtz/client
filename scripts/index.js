@@ -31,10 +31,18 @@ function sendData() {
 }
 
 function fetchData() {
-    fetch('http://localhost:8080/get-data')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('response').innerText = `Fetched Data: ${JSON.stringify(data)}`;
-        })
-        .catch(error => console.error('Error:', error));
+    fetch('http://localhost:8080/get-data', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include' // Include credentials if needed
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
