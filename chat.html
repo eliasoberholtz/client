@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Verbu - Main Page</title>
+        <script src="scripts/index.js"></script>
+        <script src="scripts/chat.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+
+    <body>
+        <h1></h1>
+        <div id="tui"></div> <!--Top ui-->
+        <div id="sui" class="side-ui"></div><!--Side UI-->
+        <div id="chat" class="chat-log">
+            <div id="chatLog"></div>
+        </div>
+        <div id="bui">
+            <input type="text" id="messageInput" placeholder="Type the ✉">
+            <input type="text" id="usernameInput" placeholder="Your user">
+            <button onclick="sendMessage()">📤</button>
+            <div id="result"></div>
+        </div>
+    </body>
+</html>
