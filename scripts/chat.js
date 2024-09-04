@@ -1,4 +1,9 @@
-const apiUrl = 'http://localhost:8080/api'
+const apiUrl = [
+    "http://192.168.1.177:8080/api",
+    "http://192.168.1.255:8080/api"
+]
+
+setInterval(loadChatLog(), 1000)
 
 window.onload = function() {
     // Your JavaScript code here
@@ -7,6 +12,8 @@ window.onload = function() {
             sendMessage();
         }
     });
+    
+    setInterval(loadChatLog(), 1000)
 };
 
 async function sendMessage() {
@@ -34,6 +41,8 @@ async function sendMessage() {
     await response.text();
     document.getElementById('result').innerHTML = "sent message!"
     loadChatLog()
+
+    document.getElementById('messageInput').value = ''
 }
 
 async function loadChatLog() {
